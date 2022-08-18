@@ -1,0 +1,128 @@
+<!-- 
+作者：ZhangDi
+https://github.com/zzd/photo-page-for-typecho
+时间:2021-11-03 版权所有，请勿删除 
+-->
+<!-- jsdelivr公共CDN -->
+<!-- 公共CDN结束 -->
+<!-- 相册图片对象存储供应商，用以加载缩略图 -->
+<!-- 自动缩略图结束 -->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>一些照片</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/zzd/photo-page-for-typecho@2.1/Multiverse/css/main.css" />
+	<link rel="shortcut icon" href="http://ty.sswin.site//favicon.ico">
+	<noscript>
+		<link rel="stylesheet"
+			href="https://cdn.jsdelivr.net/gh/zzd/photo-page-for-typecho@2.1/Multiverse/css/noscript.css" />
+	</noscript>
+	<!-- 百度统计 -->
+	<script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?e804e37f8afa68b911afdd756b4314c7";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
+
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+		<!-- Header -->
+		<header id="header">
+			<h1><a href="http://qr.sswin.site/">诚诚-帅帅</strong> Powered by ZDSR</a></h1>
+			<nav>
+				<ul>
+					<li><a href="#footer" class="icon solid fa-info-circle">关于</a></li>
+				</ul>
+			</nav>
+		</header>
+		<!-- Main -->
+		<div id="main">
+		</div>
+		<!-- Footer -->
+		<footer id="footer" class="panel">
+			<div class="inner split">
+				<div>
+					<section>
+						<h2>控制台</h2>
+						<p>本系统共有<span id="count_CN"></span>张图片，后续有可能更新，也可能不更新，诶，就玩。</p>
+						<h2>Console</h2>
+						<p>The system has a total of <span id="count_EN"></span> pictures, Subsequent may be updated, or
+							it may not be updated, oh, play.</p>
+					</section>
+					<section>
+						<ul class="icons">
+							<li><a href="https://github.com/winsight" class="icon brands fa-github"
+									target="_blank"><span class="label">GitHub</span></a></li>
+						</ul>
+					</section>
+					<p class="copyright">
+						<!-- 虽说本页面制作容易，但也需要一点点时间编辑，请保留版权信息。 -->
+						&copy; 2021 <a href="http://qr.sswin.site/">诚诚-帅帅</a> Powered by <a
+							href="https://github.com/zzd/photo-page-for-typecho">ZDSR</a> Based HTML5UP</a>.
+					</p>
+				</div>
+				<div>
+					<section>
+						<h2>关于诚诚</h2>
+						<p>XXX</p>
+					</section>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!--
+		动态读取数据 by ZhangDi
+		https://github.com/zzd/photo-page-for-typecho
+	-->
+	<script type="text/javascript">
+		var datas =
+			`网易云头像,XXX,https://qr.sswin.site/resource/img/Icon.jpg`;
+		datas = datas.split("\n");
+		for (var i = 0; i < datas.length; i++) {
+			datas[i] = datas[i].split(",");
+		}
+
+		function creatArticle(datas) {
+			var parent = document.getElementById("main");
+			for (var i = 0; i < datas.length; i++) {
+				var article = document.createElement("article");
+				article.className = "thumb";
+				parent.appendChild(article);
+				var a = document.createElement("a");
+				a.className = "image";
+				a.href = datas[i][2];
+				article.appendChild(a);
+				var img = document.createElement("img");
+				img.src = datas[i][2] + "";
+				a.appendChild(img);
+				var h2 = document.createElement("h2");
+				h2.innerHTML = datas[i][0];
+				article.appendChild(h2);
+				var p = document.createElement("p");
+				p.innerHTML = datas[i][1];
+				article.appendChild(p);
+			}
+		}
+		creatArticle(datas);
+		document.getElementById("count_EN").innerHTML = document.getElementById("count_CN").innerHTML = datas.length;
+	</script>
+	<!-- Scripts -->
+	<script src="https://cdn.jsdelivr.net/gh/zzd/photo-page-for-typecho@2.1/Multiverse/js/jquery.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/gh/zzd/photo-page-for-typecho@2.1/Multiverse/js/jquery.poptrox.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/zzd/photo-page-for-typecho@2.1/Multiverse/js/browser.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/zzd/photo-page-for-typecho@2.1/Multiverse/js/breakpoints.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/zzd/photo-page-for-typecho@2.1/Multiverse/js/util.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/zzd/photo-page-for-typecho@2.1/Multiverse/js/main.js"></script>
+</body>
+
+</html>

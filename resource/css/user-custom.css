@@ -1,0 +1,30 @@
+.tip img{
+    width: 100%;
+
+}
+
+#ad img{width: 100%;}
+.Listbox {
+
+    font-size: 100%;
+
+    text-align: left;
+
+
+    list-style: none;
+    text-align:center;
+
+}
+
+.Listbox strong{
+
+    color:red !important;
+}
+
+.TipH4{
+
+    font-size: 140%;
+
+    font-weight: bold;
+
+}
