@@ -1,0 +1,86 @@
+html, body {
+  margin: 0;
+  min-height: 100%;
+  background-color: #f3f3f3;
+}
+
+.filters {
+  align-items: center;
+  display: flex;
+  padding: 15px;
+  place-content: end;
+  gap: 4px;
+}
+
+.filter-title {
+  margin-left: auto;
+}
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin: 20px 10px 5px;
+  max-width: 60%;
+}
+
+.message .content {
+  padding: 10px 15px;
+  border-radius: 6px;
+}
+
+.message.others .content {
+  background-color: white;
+}
+
+.message.mine {
+  align-self: flex-end;
+}
+
+.message.mine .content {
+  background-color: #96ec69;;
+}
+
+.message.picture .content {
+  padding: 0;
+  background: transparent;
+}
+
+.message.voice p {
+  color: #999;
+  font-size: 14px;
+}
+
+.message.system,
+.message.system-complex {
+  align-self: center;
+}
+
+.message.system .time,
+.message.system-complex .time {
+  text-align: center;
+}
+
+.message.system .content,
+.message.system-complex .content {
+  background-color: #aaa;
+  color: #fff;
+  font-size: 14px;
+}
+
+.message.other {
+  color: #999;
+}
+
+.picture img {
+  max-width: 60%;
+  max-height: 200px;
+}
+
+.time {
+  font-size: 12px;
+  color: #ccc;
+  margin: 5px 15px 15px;
+}
